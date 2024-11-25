@@ -71,8 +71,20 @@ section {
 
 .section-other-info {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
+    width: 900px;
+    height: 810px;
+    border-radius: 10px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.section-news {
+    background-color: #323232;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     width: 600px;
     height: 810px;
     border-radius: 10px;
@@ -82,17 +94,90 @@ section {
 
 .sections-info-information {
     font-size: 1rem;
-    margin: 20px;
-    padding: 5px;
-    background-color: #fafafa;
-    border: 2px solid black;
-    box-shadow: 0 3px 3px black;
-    border-radius: 20px;
-    transition: scale 250ms ease-in-out;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 450px;
+    background-color: #ffffff;
+    border: 2px solid #eeeeee;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 150ms ease-in-out;
+}
+
+.sections-info-information>.image {
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    opacity: 0.8;
+    transition: opacity 200ms ease-in-out;
+}
+
+.sections-info-information2>.image2 {
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    opacity: 0.8;
+    transition: opacity 200ms ease-in-out;
 }
 
 .sections-info-information:hover {
-    scale: 1.01;
+    transform: scale(1.02);
+}
+
+.sections-info-information:active {
+    transform: scale(1.05);
+}
+
+.image:hover {
+    opacity: 1;
+}
+
+.sections-info-information h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.sections-info-information h2 {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    font-weight: 500;
+}
+
+.sections-info-information2 {
+    font-size: 1rem;
+    color: white;
+    margin: 20px auto;
+    max-width: 550px;
+    border-radius: 10px;
+    transition: transform 150ms ease-in-out;
+}
+
+.sections-info-information2>* {
+    animation: fadeInUp 2s forwards ease;
+}
+
+.sections-info-information2>.image2 {
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    opacity: 0.5;
+    transition: opacity 500ms ease-in-out;
+}
+
+.image2:hover {
+    opacity: 1;
 }
 
 footer {
@@ -100,10 +185,22 @@ footer {
     bottom: 0;
     width: 100%;
     padding: 10px;
-    background-color: #ebebeb;
+    background-color: #dedede;
     text-align: center;
 }
 
 footer>p {
     margin: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
