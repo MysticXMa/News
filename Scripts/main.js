@@ -148,19 +148,10 @@ let Info = document.getElementById("Info")
 
 for (let i = 0; i < info.articles.length; i++) {
     const article = info.articles[i];
-    const d = new Date(article.date);
-    const h = String(d.getHours()).padStart(2, '0');
-    const p = d.getDate();
-    const m = String(d.getMonth() + 1).padStart(2, '0');
-    const min = String(d.getMinutes()).padStart(2, '0');
-    const y = d.getFullYear();
-    const Fulldate = `${y}.${m}.${p} ${h}:${min}`;
 
     text += `
-    <div onclick="putData('${article.id}')" id="${article.id}" class="sections-info-information">
-        <h1 class="title">${article.title}, ${article.category}</h1><br>
-        <img class="image" src="${article.img}" alt="${article.title}"></img>
-        <h2 class="tags">${article.tags.join(", ")} ${Fulldate}</h2>
+    <div onclick="putData('${article.id}')" id="${article.id}" class="section-information">
+        <p class="title">${article.title}, ${article.category}</p>
     </div>
     `;
 }
@@ -170,25 +161,42 @@ function putData(ID) {
     let text2 = '';
     let Info2 = document.getElementById("Info2")
 
+    const sectionMainFrame = document.querySelector('.section-main-frame');
+    const sectionInformation2 = document.querySelector('.section-info');
+
     for (let i = 0; i < info.articles.length; i++) {
         const article = info.articles[i];
+        const d = new Date(article.date);
+        const p = d.getDate();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const y = d.getFullYear();
+        const Fulldate = `${y}.${m}.${p}`;
 
         if (ID === article.id) {
+            sectionMainFrame.style.backgroundColor = '#F3F3F3';
+            sectionInformation2.classList.add('section-info2')
+            sectionMainFrame.classList.add('section-main-frame2')
             text2 = `
-                <div id="${article.id}" class="sections-info-information2">
-                    <h2 class="tags">Post made by: ${article.author}</h2>
-                    <h1 class="title">${article.title}</h1>
-                    <hr>
-                    <div>
-                        <p>${article.content}</p>
-                    </div>
-                    <img class="image2" src="${article.img}" alt="${article.title}">
-                    <hr>
-                    <div>
-                        <p>${article.tags.join(", ")}</p>
+                <div id="${article.id}" class="sections-main-info">
+                    <p class="section-main-frame-post">Posted by: ${article.author} | ${Fulldate}</p>
+                    <p class="section-main-frame-title">${article.title}</p><br>
+                    <div class="section-main-frame-line1"></div><br>
+                    <div class="section-main-frame-div">
+                        <div class="section-main-frame-content">
+                            <p class="section-main-frame-info">${article.content}</p>
+                            <div class="section-main-frame-line1"></div>
+                            <p class="section-main-frame-tags">${article.tags.join(", ")}</p>
+                        </div>
+                        <div class="section-main-frame-image">
+                          <img class="section-main-frame-photo" src="${article.img}" alt="${article.id}">  
+                        </div>
                     </div>
                 </div>
             `;
+            setTimeout(() => {
+                sectionMainFrame.classList.remove('section-main-frame2')
+                sectionInformation2.classList.remove('section-info2')
+            }, 1000)
             break;
         }
     }
