@@ -21,7 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
             email: email,
             message: message
         });
-
-        form.reset();
     });
 });
