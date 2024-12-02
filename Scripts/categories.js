@@ -113,20 +113,6 @@ const info = {
             ]
         },
         {
-            "id": "20230416-009",
-            "title": "Breakthrough Study on Sleep Patterns Published",
-            "date": "2023-04-16",
-            "img": "https://th.bing.com/th/id/OIP.xpDlVP2__O7nhnhPGopUhgAAAA?rs=1&pid=ImgDetMain",
-            "author": "Emma Larson",
-            "content": "Researchers from the University of Health Sciences have published a breakthrough study on human sleep patterns, offering new insights into the importance of quality sleep for overall health.",
-            "category": "Health",
-            "tags": [
-                "sleep",
-                "study",
-                "health"
-            ]
-        },
-        {
             "id": "20230416-010",
             "title": "Local Chefs Compete in Culinary Showdown",
             "date": "2023-04-16",
@@ -174,7 +160,7 @@ function putData(ID) {
         if (ID === article.category) {
             sectionMainFrame.style.backgroundColor = '#F3F3F3';
             sectionMainFrame.classList.add('section-main-frame2')
-            e.classList.add('section-info2')
+            e.classList.add('section-info3')
             text2 = `
                 <div id="${article.id}" class="sections-main-info">
                     <p class="section-main-frame-post">Posted by: ${article.author} | ${Fulldate}</p>
@@ -194,8 +180,9 @@ function putData(ID) {
             `;
             setTimeout(() => {
                 sectionMainFrame.classList.remove('section-main-frame2')
-                e.classList.remove('section-info2')
+                e.classList.remove('section-info3')
             }, 1000)
+
             break;
         }
     }

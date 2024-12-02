@@ -113,8 +113,8 @@ header {
     z-index: 11;
 }
 
-.section-info2 {
-    pointer-events: all;
+.section-info3 {
+    pointer-events: none;
 }
 
 .section-main-frame2 {
