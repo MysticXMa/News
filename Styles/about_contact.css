@@ -38,7 +38,6 @@ header {
 
 .header-buttons {
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
     gap: 17px;
@@ -72,7 +71,6 @@ main {
     background-color: #FFFFFF;
     padding: 20px;
     border-radius: 10px;
-    transform: scale(1);
     box-shadow: 0 0 10px hsl(0, 0%, 75%);
     animation: scale 1000ms ease forwards;
 }
@@ -119,7 +117,7 @@ main {
     color: #555;
 }
 
-.form-group input, 
+.form-group input,
 .form-group textarea {
     border: 1px solid #CCC;
     padding: 10px;
@@ -144,10 +142,41 @@ button[type="submit"]:hover {
     background-color: #cdcdcd;
 }
 
+.main-about-info {
+    position: fixed;
+    left: 30px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px hsl(0, 0%, 75%);
+    animation: scale 1000ms ease forwards;
+}
+
+.main-about-info>h1 {
+    font-weight: normal;
+    font-size: 1.5rem;
+    transition: color 0.5s ease-in-out;
+}
+
+.main-about-info>h1:hover {
+    color: rgb(83, 83, 193);
+}
+
+.main-about-info>h2 {
+    font-weight: normal;
+    font-size: 2rem;
+    transition: color 0.5s ease-in-out;
+}
+
+.main-about-info>h2:hover {
+    color: rgb(98, 183, 98);
+}
+
 @keyframes scale {
     from {
         transform: scale(0);
     }
+
     to {
         transform: scale(1);
     }
